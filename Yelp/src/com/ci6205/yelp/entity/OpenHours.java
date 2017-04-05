@@ -1,6 +1,8 @@
 package com.ci6205.yelp.entity;
 
-public class OpenHours {
+import java.io.Serializable;
+
+public class OpenHours implements Serializable {
 
 	private Integer id;
 	private String day;

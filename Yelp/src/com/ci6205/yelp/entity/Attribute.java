@@ -1,6 +1,8 @@
 package com.ci6205.yelp.entity;
 
-public class Attribute  {
+import java.io.Serializable;
+
+public class Attribute implements Serializable {
 	private Integer id;
 	private String attributeName;
 	private String subCategory;

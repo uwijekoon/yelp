@@ -1,7 +1,8 @@
 package com.ci6205.yelp.entity;
 
+import java.io.Serializable;
 
-public class Checkin {
+public class Checkin implements Serializable {
 
 	private String count;
 	private String time;

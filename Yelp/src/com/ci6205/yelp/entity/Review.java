@@ -1,7 +1,9 @@
 package com.ci6205.yelp.entity;
 
+import java.io.Serializable;
 import java.util.Date;
-public class Review {
+
+public class Review implements Serializable {
 	private String id;
 	private double stars;
 	private Date reviewDate;
