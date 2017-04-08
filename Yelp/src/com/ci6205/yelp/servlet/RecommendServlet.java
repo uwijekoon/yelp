@@ -27,7 +27,7 @@ public class RecommendServlet extends HttpServlet {
 		User user = (User) request.getSession().getAttribute("user");
 		List<Business> recommendList = new ArrayList<>();
 		try {
-			recommendList = dao.getDefaultRecommendList(user);
+			recommendList = dao.getRecommendationList(user, "restaurants");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
