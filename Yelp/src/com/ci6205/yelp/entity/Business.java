@@ -1,8 +1,9 @@
 package com.ci6205.yelp.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Business {
+public class Business implements Serializable {
 
 	private String id;
 	private String name;

@@ -1,7 +1,9 @@
 package com.ci6205.yelp.entity;
 
+import java.io.Serializable;
 import java.util.Date;
-public class Tip {
+
+public class Tip implements Serializable {
 
 	private Integer id;
 	private String tipText;
