@@ -14,6 +14,8 @@ public class User implements Serializable {
 	private Integer funny;
 	private Integer cool;
 	private Integer fans;
+	//Added by Divya
+	private Integer numFriends;  
 	private double averageStars;
 	private Integer complimentHot;
 	private Integer complimentMore;
@@ -110,6 +112,14 @@ public class User implements Serializable {
 		this.fans = fans;
 	}
 
+	public Integer getFriendsCount() {
+		return numFriends;
+	}
+
+	public void setFriendsCount(Integer numFriends) {
+		this.numFriends = numFriends;
+	}
+	
 	public Integer getComplimentHot() {
 		return complimentHot;
 	}
