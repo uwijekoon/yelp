@@ -34,7 +34,7 @@ $(document).ready(function(){
         }
     });
 		
-	$('#openNow').click(function() {
+	/*$('#openNow').click(function() {
 		if(openNow) {
 			openNow = false;
 			$("#openNow").removeClass('filter-selected');
@@ -44,7 +44,7 @@ $(document).ready(function(){
 		}
 		
 		
-	}); 
+	}); */
 	
 	$('.tt-query').css('background-color','#fff');
 		
@@ -67,3 +67,16 @@ $(document).ready(function(){
 }(window.jQuery);
 
 
+function sendAjax(method, url, data, success, error){
+	$("body").addClass("loading");
+	$.ajax({
+		  method: method,
+		  url: url,
+		  data: data,
+		  success: success,
+		  error: error,
+		  complete: function(){
+			  $("body").removeClass("loading");
+		  }
+		})
+}

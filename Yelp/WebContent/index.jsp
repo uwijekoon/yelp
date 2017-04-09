@@ -12,13 +12,13 @@
 					</div>
 					<div class="input-group">
 						<div class="input-subgroup">
-						<input type="text" placeholder="X Coordinate" name="locationX">
+						<input type="text" placeholder="Longitude" name="longitude">
 						</div>
 					</div>
 					
 					<div class="input-group">
 						<div class="input-subgroup">
-						<input type="text" placeholder="Y Coordinate" name="locationY">
+						<input type="text" placeholder="Latitude" name="latitude">
 						</div>
 					</div>
 					<button type="submit">Login</button>

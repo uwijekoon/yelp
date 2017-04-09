@@ -19,21 +19,21 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
-		double locationX = 0;
-		double locationY = 0;
+		double longitude = 0;
+		double latitude = 0;
 		try{
-			locationX = Double.parseDouble(request.getParameter("locationX"));
-			locationY = Double.parseDouble(request.getParameter("locationY"));
+			longitude = Double.parseDouble(request.getParameter("longitude"));
+			latitude = Double.parseDouble(request.getParameter("latitude"));
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		
-		User user = new User(userId, locationX, locationY);
+		User user = new User(userId, longitude, latitude);
 		request.getSession().setAttribute("user", user);
-		request.getSession().setAttribute("latitude", locationX);
-		request.getSession().setAttribute("longitude", locationY);
-	//	response.sendRedirect("RecommendServlet");
-		response.sendRedirect("mainSearch.jsp");
+		request.getSession().setAttribute("latitude", longitude);
+		request.getSession().setAttribute("longitude", latitude);
+		response.sendRedirect("RecommendServlet");
+		//response.sendRedirect("mainSearch.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
