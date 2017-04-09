@@ -1,6 +1,10 @@
 $(document).ready(function(){
 	var openNow = false;
 	
+	$("a").click(function(){
+		$("body").addClass("loading");
+	});
+	
 	$('#query').typeahead({
 		minLength : 2,
 		name: 'data',

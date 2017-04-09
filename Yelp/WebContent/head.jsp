@@ -31,6 +31,7 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
 	
 	<script id="result-template" type="text/x-handlebars-template">
       <div class="ProfileCard u-cf">
@@ -64,5 +65,10 @@
 					<span>I</span>T
 				</div>
 			</a>
-			
+			<div class="menu">
+		<a href="RecommendServlet">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="index.jsp">Login Page</a>
+		</div>
 		</nav>
+		
+		

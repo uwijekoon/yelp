@@ -337,6 +337,7 @@ a.issue:hover {
   flex: 1;
   min-width: 50px;
   padding: 10px 4px;
+
 }
 .issue-list-head .issue-date,
 .issue .issue-date {
@@ -458,9 +459,18 @@ a.issue:hover {
   display: block;
   font-size: 16px;
   font-weight: bold;
+  float: left;
+ 
+}
+
+.issue-details .textDiv{
+ margin-right: 20px;
+     float: left;
 }
 .issue-details .issue-title {
   margin-right: 10px;
+    width: 100%;
+  float: left;
 }
 .issue-details .issue-description {
   flex: 1;
@@ -479,6 +489,9 @@ a.issue:hover {
 }
 .issue-details .issue-closed {
   text-align: right;
+}
+.issue-details .stars{
+	float: right;
 }
 .issue-logs,
 .issue-controls {
@@ -844,4 +857,15 @@ body.loading {
    modal element will be visible */
 body.loading .modal {
     display: block;
+}
+.colorFont{
+	color:#06879c;
+}
+br{
+	clear:both;
+}
+.menu{
+	float:right;
+	margin-right:10px;
+	margin-left: 70%;
 }

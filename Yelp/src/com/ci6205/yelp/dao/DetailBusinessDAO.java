@@ -39,11 +39,11 @@ public class DetailBusinessDAO {
 		
 		try{
 			String selectStatement1 = "select name,id,stars, review_count,address, city, business_state, postal_code, "
-					+ "latitude, longitude from business where id='?'";
+					+ "latitude, longitude, neighbourhood from business where id=?";
 			String selectStatement2 = "select attribute_name,sub_category, attribute_value from attribute "
-					+ "where business_id='?'";
-			String selectStatement3 = "select open_hours_day,from_time,to_time from open_hours where business_id='?'";
-			String selectStatement4 = "select category_name from business_category where business_id='?'";
+					+ "where business_id=?";
+			String selectStatement3 = "select open_hours_day,from_time,to_time from open_hours where business_id=?";
+			String selectStatement4 = "select category_name from business_category where business_id=?";
 			String selectStatement5 = "select min(b.id) r_u_id, b.name r_user_name, min(review_date) r_date, min(stars) r_stars, "
 					+ "min(text) r_text, min(a.useful) r_useful, min(a.funny) r_funny, min(a.cool) r_cool, "
 					+ "min(b.review_count) u_review_count, count(distinct f.id) num_friend,"
@@ -51,7 +51,7 @@ public class DetailBusinessDAO {
 					+ "year(current_date()) - min(e.elite_year) + 1 else 0 end)*100 + "
 					+ "(max(b.useful) + max(b.cool)) review_sort_order from review a inner join user b on "
 					+ "a.user_id = b.id inner join friends f on (f.user_id_1 = b.id or f.user_id_2 = b.id)"
-					+ "left outer join elite e on e.user_id = a.user_id where business_id='?'"
+					+ "left outer join elite e on e.user_id = a.user_id where business_id=?"
 					+ "group by b.name, a.id order by (case when min(e.elite_year) > 0 then "
 					+ "year(current_date()) - min(e.elite_year) + 1 else 0 end)*100 + "
 					+ "(max(b.useful) + max(b.cool)) desc"; 
@@ -74,6 +74,7 @@ public class DetailBusinessDAO {
 				business.setPostalCode(rs1.getString("postal_code"));
 				business.setLatitude(rs1.getDouble("latitude"));
 				business.setLongitude(rs1.getDouble("longitude"));
+				business.setNeighbourhood(rs1.getString("neighbourhood"));
 
 				List<Attribute> attributeList = new ArrayList<Attribute>();
 				ps2 = con.prepareStatement(selectStatement2);    
@@ -127,7 +128,7 @@ public class DetailBusinessDAO {
 					user.setId(rs5.getString("r_u_id"));
 					user.setName(rs5.getString("r_user_name"));
 					review.setReviewDate(rs5.getDate("r_date"));
-					review.setStars(rs5.getDouble("r_starts"));
+					review.setStars(rs5.getDouble("r_stars"));
 					review.setText(rs5.getString("r_text"));
 					review.setUseful(rs5.getInt("r_useful"));
 					review.setFunny(rs5.getInt("r_funny"));
