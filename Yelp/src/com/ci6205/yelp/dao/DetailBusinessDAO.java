@@ -54,7 +54,7 @@ public class DetailBusinessDAO {
 					+ "left outer join elite e on e.user_id = a.user_id where business_id=?"
 					+ "group by b.name, a.id order by (case when min(e.elite_year) > 0 then "
 					+ "year(current_date()) - min(e.elite_year) + 1 else 0 end)*100 + "
-					+ "(max(b.useful) + max(b.cool)) desc"; 
+					+ "(max(b.useful) + max(b.cool)) desc limit 0,20"; 
 			
 			
 			con = ConnectionUtil.createConnection();
