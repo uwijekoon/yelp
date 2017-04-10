@@ -61,6 +61,7 @@ public class DetailBusinessDAO {
 
 			ps1 = con.prepareStatement(selectStatement1);    
 			ps1.setString(1, businessId);
+			System.out.println("Retriving business details");
 			rs1 = ps1.executeQuery();
 
 			if (rs1.next()) {
@@ -79,6 +80,7 @@ public class DetailBusinessDAO {
 				List<Attribute> attributeList = new ArrayList<Attribute>();
 				ps2 = con.prepareStatement(selectStatement2);    
 				ps2.setString(1, businessId);
+				System.out.println("Retriving attribute details");
 				rs2 = ps2.executeQuery();
 				
 				while(rs2.next()){
@@ -95,6 +97,7 @@ public class DetailBusinessDAO {
 				List<OpenHours> openHoursList = new ArrayList<OpenHours>();
 				ps3 = con.prepareStatement(selectStatement3);    
 				ps3.setString(1, businessId);
+				System.out.println("Retriving open hours details");
 				rs3 = ps3.executeQuery();
 				while(rs3.next()){
 					OpenHours openHours = new OpenHours();
@@ -110,6 +113,7 @@ public class DetailBusinessDAO {
 				List<String> categoryList = new ArrayList<String>(); 
 				ps4 = con.prepareStatement(selectStatement4);    
 				ps4.setString(1, businessId);
+				System.out.println("Retriving category details");
 				rs4 = ps4.executeQuery();
 				while(rs4.next()){
 					categoryList.add(rs4.getString("category_name"));
@@ -120,6 +124,7 @@ public class DetailBusinessDAO {
 				List<Review> reviewList = new ArrayList<Review>();
 				ps5 = con.prepareStatement(selectStatement5);    
 				ps5.setString(1, businessId);
+				System.out.println("Retriving review details");
 				rs5 = ps5.executeQuery();
 				while(rs5.next()){
 					Review review = new Review();

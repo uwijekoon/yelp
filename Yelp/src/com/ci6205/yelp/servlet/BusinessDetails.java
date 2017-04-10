@@ -29,8 +29,8 @@ public class BusinessDetails extends HttpServlet {
 		
 		Business business = new Business();
 		try {
-			//business = dao.BusinessDetails(business_id);
-			business = dao.BusinessDetails("--I7YYLada0tSLkORTHb5Q");
+			business = dao.BusinessDetails(business_id);
+			//business = dao.BusinessDetails("--I7YYLada0tSLkORTHb5Q");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
