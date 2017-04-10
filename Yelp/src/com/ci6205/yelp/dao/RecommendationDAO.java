@@ -52,17 +52,18 @@ public class RecommendationDAO {
 			con = ConnectionUtil.createConnection();
 			ps = con.prepareStatement(selectStatement);    
 			int i = 1;
-			if(filterOpenNow){
-				DateFormat formatter = new SimpleDateFormat("EEEE");
-				ps.setString(i++, formatter.format(new Date()));
-				formatter = new SimpleDateFormat("HH");
-				ps.setInt(i++, (Integer.parseInt(formatter.format(new Date()))));
-			}
+			
 			
 			if(filterNearBy){
 				ps.setDouble(i++, latitude);
 				ps.setDouble(i++, longitude);
 				ps.setDouble(i++, latitude);
+			}
+			if(filterOpenNow){
+				DateFormat formatter = new SimpleDateFormat("EEEE");
+				ps.setString(i++, formatter.format(new Date()));
+				formatter = new SimpleDateFormat("HH");
+				ps.setInt(i++, (Integer.parseInt(formatter.format(new Date()))));
 			}
 			ps.setString(i++, user.getId());
 			ps.setString(i++, category);
