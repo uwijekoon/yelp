@@ -32,8 +32,8 @@ public class User implements Serializable {
 	private List<Review> reviewList;
 	private List<Tip> tipList;
 	private List<User> friendsList;
-	private double locationX;
-	private double locationY;
+	private double latitude;
+	private double longitude;
 
 	public User() {
 	}
@@ -42,10 +42,10 @@ public class User implements Serializable {
 		this.id = id;
 	}
 	
-	public User(String id, double locationX, double locationY){
+	public User(String id, double longitude, double latitude){
 		this.id = id;
-		this.locationX = locationX;
-		this.locationY = locationY;
+		this.longitude = longitude;
+		this.latitude = latitude;
 	}
 
 	public String getId() {
@@ -248,20 +248,47 @@ public class User implements Serializable {
 		this.friendsList = friendsList;
 	}
 
-	public double getLocationX() {
-		return locationX;
+	/**
+	 * @return the numFriends
+	 */
+	public Integer getNumFriends() {
+		return numFriends;
 	}
 
-	public void setLocationX(double locationX) {
-		this.locationX = locationX;
+	/**
+	 * @param numFriends the numFriends to set
+	 */
+	public void setNumFriends(Integer numFriends) {
+		this.numFriends = numFriends;
 	}
 
-	public double getLocationY() {
-		return locationY;
+	/**
+	 * @return the latitude
+	 */
+	public double getLatitude() {
+		return latitude;
 	}
 
-	public void setLocationY(double locationY) {
-		this.locationY = locationY;
+	/**
+	 * @param latitude the latitude to set
+	 */
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
 	}
+
+	/**
+	 * @return the longitude
+	 */
+	public double getLongitude() {
+		return longitude;
+	}
+
+	/**
+	 * @param longitude the longitude to set
+	 */
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
 
 }
